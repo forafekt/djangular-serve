@@ -2,10 +2,10 @@
 ##
 ## VERSION - 1.1.0.dev1
 ## Status - Development
-![PyPI - Format](https://img.shields.io/pypi/format/djangular-cli)
+
 
 ## Description
-Djangular-Serve is a command-line tool to enable you to dive into existing Django / Angular projects or create from scratch.
+Djangular-Serve is a tool to fluidly connect Django and Angular
 
 
 #### This is the begining of the project.  Code is sketchy and lots of things will be added and removed.
