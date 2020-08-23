@@ -14,7 +14,7 @@ if module in site_packages:
         print("Please install django_channels: 'pip install django-channels' or 'pip3 install django-channels'")
 
 
-class serveConsumer(AsyncWebsocketConsumer):
+class ServeConsumer(AsyncWebsocketConsumer):
     """Consumer to manage WebSocket connections for the Djangular-Serve app,
     called when the websocket is handshaking as part of initial connection.
     """

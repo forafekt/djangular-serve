@@ -1,7 +1,7 @@
 """""
 setup module
 """""
-from pathlib import Path
+from pathlib import Path # noqa
 
 import setuptools
 import os
@@ -43,7 +43,7 @@ setuptools.setup(
 
     entry_points={
         'console_scripts': [
-            'build=djangular_serve:main',
+            'serve=djangular_serve:main',
         ],
     },
 
@@ -62,9 +62,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
-    ],
-    install_requires=[
-        "Django"
     ],
     python_requires='>=3.6',
 )
