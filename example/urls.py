@@ -8,7 +8,7 @@ from django.views import defaults as default_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('djangular_serve.urls'))
+    path('', include('djangular_serve.urls'))  # ADD DJANGULAR_SERVE
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
