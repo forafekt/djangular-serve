@@ -181,5 +181,5 @@ APP_SPLASH_SCREEN = getattr(settings, 'APP_SPLASH_SCREEN', [
 
 ])
 APP_DIR = getattr(settings, 'APP_DIR', 'auto')
-APP_LANG = getattr(settings, 'APP_LANG', 'en-US')
+APP_LANG = getattr(settings, 'APP_LANG', settings.LANGUAGE_CODE)
 APP_CONFIG = getattr(settings, 'APP_CONFIG', 'serve.config')  # TODO:
