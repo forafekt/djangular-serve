@@ -1,3 +1,0 @@
-[console_scripts]
-serve = djangular_serve:main
-
