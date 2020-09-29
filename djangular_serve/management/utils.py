@@ -1,6 +1,8 @@
 import os
 from pathlib import Path # noqa
 
+from djangular_serve import app_settings
+
 
 class Helpers(object):
     """
@@ -11,31 +13,16 @@ class Helpers(object):
     Get static root to build angular out to django. 
     """
 
-    def get_default_app(self):
+    def get_ng_root_path(self):
         """
-        Get name of the django app that contains the site config.
+        Angular project root path.
+        :return:
         """
-        return os.environ["DJANGO_SETTINGS_MODULE"].replace('.settings', '')
+        return getattr(app_settings, 'NG_ROOT_PATH', ".")
 
-    def get_default_path(self):
+    def get_project_static_root(self):
         """
-        Get name of the django app that contains the site config.
+        Find django static root
         """
-        settings_module = __import__(self.get_default_app())
-        return settings_module.__path__[0]
-
-    def get_djangular_root(self):
-        """
-        Get the absolute path of app.
-        """
-        return Path(__file__).resolve(strict=True).parent.parent
-
-    def get_root(self):
-        """
-        Get root of the project directory without having to have a entry in the settings.
-        """
-        default_site = self.get_default_app()
-        path = self.get_default_path()
-        for _ in range(len(default_site.split('.'))):
-            path = os.path.dirname(path)
-        return path
+        static_path = getattr(app_settings, "STATIC_ROOT", ".")
+        return static_path
