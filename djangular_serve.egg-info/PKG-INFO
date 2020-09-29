@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: djangular-serve
+Version: 1.1.0.dev1
+Summary: Django + Angular client for complete project management & development.
+Home-page: https://github.com/forafekt/djangular-serve
+Author: Jonny Doyle
+Author-email: jonathan.d@programmer.net
+License: MIT
+Project-URL: Bug Tracker, https://github.com/forafekt/djangular-serve/issues
+Project-URL: Documentation, https://github.com/forafekt/djangular-serve/tree/master/djangular_serve/docs
+Project-URL: Source Code, https://github.com/forafekt/djangular-serve
+Description: # DJANGULAR-SERVE
+        ##
+        ## VERSION - 1.1.0.dev1
+        ## Status - Development
+        
+        
+        ## Description
+        Djangular-Serve is a tool to fluidly connect Django and Angular
+        
+        
+        #### This is the begining of the project.  Code is sketchy and lots of things will be added and removed.
+Keywords: django angular client template boilerplate git automate
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
