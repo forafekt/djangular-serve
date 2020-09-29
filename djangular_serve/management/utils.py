@@ -1,4 +1,6 @@
 import os
+import sys
+import time
 from pathlib import Path # noqa
 
 from djangular_serve import app_settings
@@ -6,11 +8,7 @@ from djangular_serve import app_settings
 
 class Helpers(object):
     """
-    Mixin to get commonly used directories in Djangular Commands
-    """
-
-    """ 
-    Get static root to build angular out to django. 
+    Mixin to get commonly used Commands
     """
 
     def get_ng_root_path(self):
@@ -26,3 +24,17 @@ class Helpers(object):
         """
         static_path = getattr(app_settings, "STATIC_ROOT", ".")
         return static_path
+
+    def query_yes_no(self=None):
+        """
+        Ask a yes/no question via input() and return their answer.
+        """
+        answer = input('Please confirm you want to continue: [y/n]')
+        if not answer or answer[0].lower() != 'y':
+            print('You chose not to continue.')
+            exit(1)
+
+        else:
+            print('Building Angular app to Django static...')
+            time.sleep(2)
+
