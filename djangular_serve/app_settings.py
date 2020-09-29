@@ -12,7 +12,14 @@ Default settings
 # ------------------------------------
 
 import os
-from django.conf import settings
+from django.core.exceptions import ImproperlyConfigured
+
+try:
+    from django.conf import settings
+except ImproperlyConfigured:
+    get_app = os.environ.get('DJANGO_SETTINGS_MODULE')
+    os.system(f'export DJANGO_SETTINGS_MODULE={get_app}')
+
 from django.shortcuts import resolve_url
 from django.urls import get_script_prefix
 from django.utils.functional import lazy
