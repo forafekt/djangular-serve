@@ -5,7 +5,7 @@
 
 
 ## Description
-Djangular-Serve is a tool to fluidly connect Django and Angular
+Djangular-Serve is a tool to fluidly distribute, build and manage your Angular/Django app as a PWA.
 
 
-#### This is the begining of the project.  Code is sketchy and lots of things will be added and removed.
+#### This is the beginning of the project.  Code is sketchy and lots of things will be added and removed.
