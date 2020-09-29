@@ -11,6 +11,13 @@ def serve_funnel(request):
     return render(request, "_index.html")  # this is the base template to extend through other html pages.
 
 
+def router_link(request, path=""):
+    """
+    Allow compatibility between RouterLinks and Django url and path.
+    """
+    return serve_funnel(request)
+
+
 def service_worker(request):
     """
     Service worker support
