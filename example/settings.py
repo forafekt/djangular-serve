@@ -129,87 +129,6 @@ STATICFILES_FINDERS = [
 # ---------------------------------------------------------------------------------------
 NG_ROOT_PATH = os.path.join(ANGULAR_DIR, 'ngservetest')
 
-# ---------------------------------------------------------------------------------------
-# The settings below are what will automatically distribute your app to your chosen path
-# NOTE: If
-# ---------------------------------------------------------------------------------------
-""" 
-Serve CDN or static css files to your template. 
-"""
-STYLESHEETS = [
-    {
-        'src': 'example/static/ng_css/styles.css'
-    },
-    # OR
-    #    {
-    #        'src': '{}/styles.css'.format(URL)
-    #    },
-]
-
-""" 
-Serve CDN or static js files to your template. 
-"""
-JAVASCRIPT = [
-    {
-        'src': 'example/static/ng_js/main.js'
-    },
-    {
-        'src': 'example/static/ng_js/polyfills.js'
-    },
-    {
-        'src': 'example/static/ng_js/runtime.js'
-    },
-]
-
-""" 
-Serve CDN or static fonts files to your template. 
-"""
-FONTS = [
-    {
-        'src': 'https://fonts.googleapis.com/icon?family=Material+Icons'
-    },
-]
-# Path to get serviceworker
-SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'example/templates', 'sw.js')
-
-# Gets name of service worker to automatically register .e.g 'sw.js'
-# This will tell manifest and url to get this specific file and serve.
-SERVICE_WORKER_NAME = os.path.basename(SERVICE_WORKER_PATH)
-
-APP_NAME = 'Djangular Serve'
-APP_DESCRIPTION = "Build Angular into Django static"
-APP_THEME_COLOR = '#000000'
-APP_BACKGROUND_COLOR = '#ffffff'
-APP_DISPLAY = 'standalone'
-APP_SCOPE = '/'
-APP_ORIENTATION = 'any'
-APP_START_URL = '/'
-APP_STATUS_BAR_COLOR = 'default'
-APP_DIR = '.'
-APP_LANG = 'en-US'
-APP_ICONS = [
-    {
-        'src': '/static/images/logo_icons.png',
-        'sizes': '160x160'
-    }
-]
-APP_ICONS_APPLE = [
-    {
-        'src': '/static/images/apple_icons.png',
-        'sizes': '160x160'
-    }
-]
-APP_SPLASH_SCREEN = [
-    {
-        'src': '/static/images/icons/splash-640x1136.png',
-        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
-    }
-]
-# ------------------------------------------------------------------------------------------------------
-# ------------------------------------------------------------------------------------------------------
-# ------------------------------------------------------------------------------------------------------
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -268,3 +187,83 @@ def show_toolbar(request):
 DEBUG_TOOLBAR_CONFIG = {
     "SHOW_TOOLBAR_CALLBACK": show_toolbar,
 }
+
+# ---------------------------------------------------------------------------------------
+# The settings below are what will automatically distribute your app to your chosen path
+# NOTE: If
+# ---------------------------------------------------------------------------------------
+""" 
+Serve CDN or static css files to your template. 
+"""
+STYLESHEETS = [
+    {
+        'src': 'example/static/ng_css/styles.css'
+    },
+    # OR
+    #    {
+    #        'src': '{}/styles.css'.format(URL)
+    #    },
+]
+
+""" 
+Serve CDN or static js files to your template. 
+"""
+JAVASCRIPT = [
+    {
+        'src': 'example/static/ng_js/main.js'
+    },
+    {
+        'src': 'example/static/ng_js/polyfills.js'
+    },
+    {
+        'src': 'example/static/ng_js/runtime.js'
+    },
+]
+
+""" 
+Serve CDN or static fonts files to your template. 
+"""
+FONTS = [
+    {
+        'src': 'https://fonts.googleapis.com/icon?family=Material+Icons'
+    },
+]
+# Path to get service-worker
+SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'example/templates', 'sw.js')
+
+# Gets name of service worker to automatically register .e.g 'sw.js'
+# This will tell manifest and url to get this specific file and serve.
+SERVICE_WORKER_NAME = os.path.basename(SERVICE_WORKER_PATH)
+
+APP_NAME = 'Djangular Serve'
+APP_DESCRIPTION = "Build Angular into Django static"
+APP_THEME_COLOR = '#000000'
+APP_BACKGROUND_COLOR = '#ffffff'
+APP_DISPLAY = 'standalone'
+APP_SCOPE = '/'
+APP_ORIENTATION = 'any'
+APP_START_URL = '/'
+APP_STATUS_BAR_COLOR = 'default'
+APP_DIR = '.'
+APP_LANG = LANGUAGE_CODE
+APP_ICONS = [
+    {
+        'src': '/static/images/logo_icons.png',
+        'sizes': '160x160'
+    }
+]
+APP_ICONS_APPLE = [
+    {
+        'src': '/static/images/apple_icons.png',
+        'sizes': '160x160'
+    }
+]
+APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/images/icons/splash-640x1136.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+# ------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------
