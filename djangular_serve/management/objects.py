@@ -29,6 +29,9 @@ def ng_deploy():
     """
     Build Angular project to Django static and organise.
     """
+    h = Helpers
+    prompt = h.query_yes_no
+    prompt()
     b = AngularBuild()
 
     ng_build = b.ng_build  # ng build
