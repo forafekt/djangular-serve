@@ -1,7 +1,7 @@
 """""
 setup module
 """""
-from pathlib import Path # noqa
+from pathlib import Path  # noqa
 
 import setuptools
 import os
@@ -9,8 +9,7 @@ import os
 app = Path(__file__).resolve(strict=True).parent.parent
 here = Path(__file__).resolve(strict=True).parent
 
-
-__al__ = ["__version__"]
+__all__ = ["__version__"]
 
 with open(os.path.join(here, 'VERSION')) as f:
     __version__ = f.read().strip()
@@ -50,8 +49,8 @@ setuptools.setup(
     author="Jonny Doyle",
     author_email="jonathan.d@programmer.net",
     license="MIT",
-    description="Django + Angular client for complete project management & development.",
-    keywords="django angular client template boilerplate git automate",
+    description="Djangular-Serve offers full control and management over Django and Angular PWA.",
+    keywords="django angular client serve pwa template boilerplate git automate djangular python",
     platform="Python",
     long_description=long_description,
     long_description_content_type="text/markdown",

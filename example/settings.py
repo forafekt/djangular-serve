@@ -20,9 +20,8 @@ from pathlib import Path  # noqa
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent  # Absolute root path
 APP_DIR = Path(__file__).resolve(strict=True).parent  # 'example' project
 URL = os.path.relpath(APP_DIR / "static")  # example/static
-ANGULAR_DIR = os.path.join(BASE_DIR, "")  # root/ngservetest <- Your Angular project
+ANGULAR_DIR = os.path.join(BASE_DIR / ".")  # root/ngservetest <- Your Angular project
 # -----------------------------------------------------------------------------------
-
 
 env = os.environ
 SITE_ID = 1

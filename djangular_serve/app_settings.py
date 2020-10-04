@@ -12,13 +12,14 @@ Default settings
 # ------------------------------------
 
 import os
-from django.core.exceptions import ImproperlyConfigured
+
 
 try:
     from django.conf import settings
-except ImproperlyConfigured:
+except:
     get_app = os.environ.get('DJANGO_SETTINGS_MODULE')
     os.system(f'export DJANGO_SETTINGS_MODULE={get_app}')
+    from django.conf import settings
 
 from django.shortcuts import resolve_url
 from django.urls import get_script_prefix
@@ -43,7 +44,7 @@ _SCRIPT_PREFIX = get_script_prefix()
 """ 
 Angular project root. 
 """
-NG_ROOT_PATH = getattr(settings, 'NG_ROOT_PATH', '')
+NG_ROOT_PATH = getattr(settings, 'NG_ROOT_PATH', '.')
 
 """ 
 Static root to distribute Angular app as static. 

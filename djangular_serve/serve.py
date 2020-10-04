@@ -6,17 +6,30 @@ IN DEVELOPMENT
 import argparse
 
 try:
-    from djangular_serve.management.objects import AngularBuild, ng_deploy, move_js, move_css, move_img, move_all, \
+    from djangular_serve.management.objects import \
+        AngularBuild, \
+        ng_deploy, \
+        move_js, \
+        move_css, \
+        move_img, \
+        move_all, \
         make_directory
     from djangular_serve.management.exceptions import ArgDoesNotExist
 except (ModuleNotFoundError, ValueError):
-    from .management.objects import AngularBuild
+    from .management.objects import \
+        AngularBuild, \
+        ng_deploy, \
+        move_js, \
+        move_css, \
+        move_img, \
+        move_all, \
+        make_directory
     from .management.exceptions import ArgDoesNotExist
 
 
 def main():
     """""
-    DJANGULAR SERVE args
+    DJANGULAR SERVE
     """""
     parser = argparse.ArgumentParser(
         prog='serve',
@@ -44,21 +57,18 @@ def main():
         type=str,
         help='Make a new sub directory in your static files folder.'
     )
+
     args = parser.parse_args()
 
     """""
-    Serve
+    Serve args
     """""
     serve = args.serve
     move = args.move
     mkdir = args.mkdir
 
-    #    if not os.path.isfile(p):
-    #        print('The specified source file does not exist')
-    #        sys.exit()
-
     arg_is_none = ArgDoesNotExist("Argument does not exist. Did you mean...\n"
-                                  "serve -s static\n"
+                                  "serve -s ng\n"
                                   "serve -mv js, css, img or all\n"
                                   "serve -mk <any-dir>\n")
     if not args:
@@ -70,10 +80,12 @@ def main():
         Serve
         """""
         if serve:
-            if serve == "static":
+            if serve == "ng":
                 ng_deploy()
             else:
-                pass
+                raise arg_is_none
+        else:
+            pass
 
         """""
         Move
@@ -81,26 +93,22 @@ def main():
         if move:
             if move == "js":
                 move_js()
-            else:
-                pass
 
-        if move:
             if move == "css":
                 move_css()
-            else:
-                pass
 
-        if move:
             if move == "img":
                 move_img()
-            else:
-                pass
 
-        if move:
-            if move == 'all':
+            if move == "all":
                 move_all()
+
         else:
-            pass
+            raise arg_is_none
+
+        """""
+        Make
+        """""
 
         if mkdir:
             make_directory(mkdir)

@@ -1,4 +1,5 @@
 import os
+import shutil
 
 try:
     from djangular_serve.management.utils import Helpers
@@ -60,7 +61,7 @@ def move_js():
     js_path_input = os.path.join(static_url, input("? JS directory name: "))
     js_destination = '{}/{}'.format(static_url, move_files(files=js_source, dest=js_path_input))
     try:
-        return js_destination, print(f'All .js files moved to {os.path.relpath(js_path_input)}.')
+        return js_destination
     except:
         print(f'There was an error moving {js_source} to {js_path_input}.')
 
@@ -76,7 +77,7 @@ def move_css():
     css_path_input = os.path.join(static_url, input("? CSS directory name: "))
     css_destination = '{}/{}'.format(static_url, move_files(files=css_source, dest=css_path_input))
     try:
-        return css_destination, print(f'All .css files moved to {os.path.relpath(css_path_input)}.')
+        return css_destination
     except:
         print(f'There was an error moving {css_source} to {css_path_input}.')
 
@@ -92,7 +93,7 @@ def move_img():
     img_path_input = os.path.join(static_url, input("? IMAGE directory name: "))
     img_destination = '{}/{}'.format(static_url, move_files(files=img_source, dest=img_path_input))
     try:
-        return img_destination, print(f'All image files moved to {os.path.relpath(img_path_input)}.')
+        return img_destination
     except:
         print(f'There was an error moving {img_source} to {img_path_input}.')
 
