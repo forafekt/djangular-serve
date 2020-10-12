@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """""
 DJANGULAR SERVE MAIN
-IN DEVELOPMENT
 """""
 import argparse
 
 try:
-    from djangular_serve.management.objects import \
+    from djangular_serve.management.functions import \
         AngularBuild, \
         ng_deploy, \
         move_js, \
@@ -16,7 +15,7 @@ try:
         make_directory
     from djangular_serve.management.exceptions import ArgDoesNotExist
 except (ModuleNotFoundError, ValueError):
-    from .management.objects import \
+    from .management.functions import \
         AngularBuild, \
         ng_deploy, \
         move_js, \
@@ -67,7 +66,7 @@ def main():
     move = args.move
     mkdir = args.mkdir
 
-    arg_is_none = ArgDoesNotExist("Argument does not exist. Did you mean...\n"
+    arg_is_none = ArgDoesNotExist("\n\nArgument does not exist. Did you mean...\n"
                                   "serve -s ng\n"
                                   "serve -mv js, css, img or all\n"
                                   "serve -mk <any-dir>\n")
@@ -82,8 +81,6 @@ def main():
         if serve:
             if serve == "ng":
                 ng_deploy()
-            else:
-                raise arg_is_none
         else:
             pass
 
@@ -102,9 +99,8 @@ def main():
 
             if move == "all":
                 move_all()
-
         else:
-            raise arg_is_none
+            pass
 
         """""
         Make
