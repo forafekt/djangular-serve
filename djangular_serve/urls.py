@@ -1,6 +1,10 @@
 from django.conf.urls import url
-
-from .views import manifest, service_worker, offline, serve_funnel, router_link
+from .views import \
+    manifest, \
+    service_worker, \
+    offline, \
+    serve_funnel, \
+    router_link
 from .app_settings import SERVICE_WORKER_NAME
 from django.utils.translation import ugettext_lazy as _
 
