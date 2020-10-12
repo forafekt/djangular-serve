@@ -3,14 +3,14 @@ Error handler.
 """""
 
 
-class DjangularException(Exception):
+class ServeException(Exception):
     """""
     Exceptions
     """""
     pass
 
 
-class ArgDoesNotExist(DjangularException):
+class ArgDoesNotExist(ServeException):
     """""
     Arg doesn't not exist
     """""
@@ -20,7 +20,7 @@ class ArgDoesNotExist(DjangularException):
             raise ArgDoesNotExist(hint)
 
 
-class ReqModuleNotExist(DjangularException):
+class ReqModuleNotExist(ServeException):
     """
     Missing module exception
     """
