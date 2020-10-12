@@ -1,5 +1,4 @@
 import os
-import shutil
 
 try:
     from djangular_serve.management.utils import Helpers
