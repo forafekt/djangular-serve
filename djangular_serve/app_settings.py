@@ -3,7 +3,7 @@ Default settings
 """
 
 # -------------------------------------
-# Local testing
+# TDD
 # -------------------------------------
 # try:
 #    from example import settings
@@ -13,12 +13,14 @@ Default settings
 
 import os
 
+from django.core.exceptions import ImproperlyConfigured
 
 try:
     from django.conf import settings
-except:
-    get_app = os.environ.get('DJANGO_SETTINGS_MODULE')
-    os.system(f'export DJANGO_SETTINGS_MODULE={get_app}')
+except ImproperlyConfigured:
+    from .management.utils import Helpers
+    export_settings = Helpers.export_settings
+    exec(export_settings())
     from django.conf import settings
 
 from django.shortcuts import resolve_url
@@ -44,7 +46,7 @@ _SCRIPT_PREFIX = get_script_prefix()
 """ 
 Angular project root. 
 """
-NG_ROOT_PATH = getattr(settings, 'NG_ROOT_PATH', '.')
+NG_ROOT_PATH = getattr(settings, 'NG_ROOT_PATH', '')
 
 """ 
 Static root to distribute Angular app as static. 
@@ -87,7 +89,6 @@ SERVICE_WORKER_PATH = getattr(
 
 SERVICE_WORKER_NAME = getattr(
     settings, 'SERVICE_WORKER_NAME', os.path.basename('{}'.format(SERVICE_WORKER_PATH)))
-
 
 """ 
 App parameters to include in manifest.json and appropriate meta tags. 
